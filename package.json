@@ -1,6 +1,6 @@
 {
   "name": "homebridge-garagedoor-ryobi-tiwiconnect",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Ryobi Garage Door plugin for homebridge: https://github.com/b2point0h/homebridge-garagedoor-ryobi-tiwiconnect",
   "license": "ISC",
   "repository": {
