@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1",
-    "undici": "^6.19.2",
     "ws": "^7.4.6"
   },
   "keywords": [

@@ -220,7 +220,7 @@ export class RyobiGDOAccessory {
         this.context.state = state;
       }
     } catch (ex) {
-      this.logger.error(ex);
+      this.logger.error(`Failed polling state: ${ex}`);
     }
     const isActive = state === this.Characteristic.CurrentDoorState.OPENING || state === this.Characteristic.CurrentDoorState.CLOSING;
     const delay = isActive ? 3e3 : this.poll_long_delay;

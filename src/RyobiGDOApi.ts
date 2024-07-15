@@ -5,19 +5,16 @@ import { DeviceStatusResponse, GetDeviceResponse, LoginResponse } from './RyobiG
 import { RyobiGDOCredentials } from './RyobiGDOCredentials';
 import { RyobiGDODevice } from './RyobiGDODevice';
 import { RyobiGDOSession } from './RyobiGDOSession';
-import { Agent, setGlobalDispatcher } from 'undici';
+import https from 'https';
 
 const apikeyURL = 'https://tti.tiwiconnect.com/api/login';
 const deviceURL = 'https://tti.tiwiconnect.com/api/devices';
 const websocketURL = 'wss://tti.tiwiconnect.com/api/wsrpc';
 
-const agent = new Agent({
-  connect: {
-    rejectUnauthorized: false
-  }
-});
 
-setGlobalDispatcher(agent);
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false,
+});
 
 export type DoorState = 'CLOSED' | 'OPEN' | 'CLOSING' | 'OPENING';
 const doorStateMap = new Map<number, DoorState>([
@@ -108,6 +105,7 @@ export class RyobiGDOApi {
         ...init?.headers,
         cookie,
       },
+      agent: httpsAgent,
     });
 
     const cookies = response.headers.raw()['set-cookie'] ?? [];
