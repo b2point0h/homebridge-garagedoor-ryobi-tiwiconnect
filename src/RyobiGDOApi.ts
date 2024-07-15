@@ -201,7 +201,7 @@ export class RyobiGDOApi {
     let complete = false;
     const apiKey = await this.getApiKey();
     const promise = new Promise<void>((resolve, reject) => {
-      const ws = new WebSocket(websocketURL);
+      const ws = new WebSocket(websocketURL, {rejectUnauthorized: false});
       ws.on('open', () => {
         const login = JSON.stringify({
           jsonrpc: '2.0',
