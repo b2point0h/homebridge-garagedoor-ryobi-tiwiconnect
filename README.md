@@ -4,9 +4,9 @@
 
 ## Important notice: 
 
-I am not able to support this anymore and i'm looking for someone who wants to take over maintainance. At the time I wrote this, Oct 2021, this NPM is working but i can no longer fix and test changes. If you are interested in taking this over, and also the published version on npmjs.com site, contact me.
+This project was branched from @knuckleheadsmiff and was no longer maintined (https://github.com/knuckleheadsmiff/homebridge-garagedoor-ryobi)
 
-_I no longer own a ryobi opener so it is just impossible for me to do any maintainance_
+It needed some work to deal with unverified certs from TiWi Connect, which often get updated and need a little love to keep this project going.
 
 ## Installation
 
